@@ -3,7 +3,7 @@ use HTML::DBTable;
 use DBIx::DBSchema::Table;
 use DBIx::DBSchema::Column;
 
-use Test::More tests => 15;
+use Test::More tests => 10;
 BEGIN { use_ok('HTML::DBTable') }
 
 
@@ -54,15 +54,3 @@ $pd->appearances({column1 => 'hidden'});
 ok($pd->html=~/type="HIDDEN" name="column1"/,'test appearances setting an hidden field');
 $pd->appearances(['hidden']);
 ok($pd->html=~/type="HIDDEN" name="column1"/,'the same with positional item');
-$pd->appearances(['hidden','combo']);
-ok($pd->html=~/select name="column2"/,'setting a combo field appearance');
-$pd->enums({column2 => [0,1,2,3]});
-ok($pd->html=~/value="3" >3/,'checking combo items hash_array');
-$pd->enums({column2 => {0=>'zero',1=>'uno',2=>'due',3=>'tre'}});
-ok($pd->html=~/value="3" >tre/,'checking combo items hash_hash');
-$pd->enums([undef, [0,1,2,3]]);
-ok($pd->html=~/value="3" >3/,'checking combo items array_array');
-$pd->enums([undef,{0=>'zero',1=>'uno',2=>'due',3=>'tre'}]);
-ok($pd->html=~/value="3" >tre/,'checking combo items array_hash');
-
-

@@ -8,7 +8,7 @@ To install this module
 # make test
 # make install
 
-MySQL note.
+ DBIx::DBSchema note.
 ===========
 
 This module use the DBIx::DBSchema module to get DB schema. 
@@ -29,6 +29,15 @@ patch -P1 < DBIx_DBSchema_with_enum.patch
 
 in the directory where DBIx::DBSchema is installed (for example this
 directory is /usr/lib/perl5/site_perl/5.8.0/DBIx/DBSchema on my system).
+
+If you use CPAN module to install DBIx::DBSchema version 0.22 you can be
+frustrating by the fact that this module doesn't install owing to test
+errors. I'm apologized about this problem by this module isn't mine.
+You can bypass this forcing installation with the command
+
+cpan> force install DBIx::DBSchema
+
+I have see no problem with this.
 
 
 

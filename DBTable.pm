@@ -8,7 +8,7 @@ use Params::Validate qw(:all);
 use DBIx::DBSchema;
 use HTML::Template;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 my $init_params = 
 	{
