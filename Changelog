@@ -1,6 +1,18 @@
 Changelog file for HTML::DBTable
 ================================
 
+Version 00.05 (2004-01-11)
+==========================
+- Add public method strip_tablename that set a boolean param that set fields
+  name with tablename if param is false. Default is to strip table name.
+- Add public method begin_form and end_form that set two boolean param passed
+  to template (form.begin and form.end) that can be use to add the html FORM
+  start and end tag
+- Add public methods cb_rows_pre, cb_rows_post, cb_row_pre,cd_row_post to 
+  set a Callback object called respectively before rows, after rows, before
+  every row and after every row. The return of these callbacks is used to 
+  set template parm rows.pre, rows.post, row.pre and row.post.
+
 Version 00.04 (2004-01-08)
 ==========================
 - Missing DBIx_DBSchema_with_enum.patch.

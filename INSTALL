@@ -8,7 +8,7 @@ To install this module
 # make test
 # make install
 
- DBIx::DBSchema note.
+DBIx::DBSchema note.
 ===========
 
 This module use the DBIx::DBSchema module to get DB schema. 
@@ -16,7 +16,7 @@ But DBIx::DBSchema version 0.22 doesn't know "ENUM" MySQL type and so,
 this module (and DBIx::DBSchema too) doesn't work with MySQL table 
 that have "ENUM" fields in its.
 
-I notify this bugs to DBIx::DBSchema owner but, untill he doesn't have
+I notify this bug to DBIx::DBSchema owner but, untill he doesn't have
 time to patch its module, you can apply my patch
 
 DBIx_DBSchema_with_enum.patch

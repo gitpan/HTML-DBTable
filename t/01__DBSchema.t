@@ -3,7 +3,7 @@ use HTML::DBTable;
 use DBIx::DBSchema::Table;
 use DBIx::DBSchema::Column;
 
-use Test::More tests => 10;
+use Test::More tests => 11;
 BEGIN { use_ok('HTML::DBTable') }
 
 
@@ -54,3 +54,5 @@ $pd->appearances({column1 => 'hidden'});
 ok($pd->html=~/type="HIDDEN" name="column1"/,'test appearances setting an hidden field');
 $pd->appearances(['hidden']);
 ok($pd->html=~/type="HIDDEN" name="column1"/,'the same with positional item');
+$pd->strip_tablename(0);
+ok($pd->html=~/DBTable_test\./,'don\'t strip table name');
